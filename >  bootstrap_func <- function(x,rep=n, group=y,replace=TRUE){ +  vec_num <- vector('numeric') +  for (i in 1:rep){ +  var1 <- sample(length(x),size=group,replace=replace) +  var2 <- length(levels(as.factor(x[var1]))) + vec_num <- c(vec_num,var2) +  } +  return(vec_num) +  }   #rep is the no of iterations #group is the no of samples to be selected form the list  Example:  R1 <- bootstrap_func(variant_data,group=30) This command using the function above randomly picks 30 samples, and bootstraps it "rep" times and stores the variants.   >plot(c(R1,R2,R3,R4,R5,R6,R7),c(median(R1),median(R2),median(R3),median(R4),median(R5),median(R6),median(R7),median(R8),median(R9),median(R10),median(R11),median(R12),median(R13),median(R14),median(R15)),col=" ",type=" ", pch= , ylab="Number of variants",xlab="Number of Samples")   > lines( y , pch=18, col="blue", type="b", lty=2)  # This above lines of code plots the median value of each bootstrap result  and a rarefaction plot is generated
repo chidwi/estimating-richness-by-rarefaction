@@ -1,0 +1,23 @@
+>  bootstrap_func <- function(x,rep=n, group=y,replace=TRUE){
++  vec_num <- vector('numeric')
++  for (i in 1:rep){
++  var1 <- sample(length(x),size=group,replace=replace)
++  var2 <- length(levels(as.factor(x[var1])))
++ vec_num <- c(vec_num,var2)
++  }
++  return(vec_num)
++  }
+ 
+#rep is the no of iterations
+#group is the no of samples to be selected form the list
+
+#Example: 
+#R1 <- bootstrap_func(variant_data,group=30) This command using the function above randomly picks 30 samples, and bootstraps it "rep" times and stores the variants.
+
+
+>plot(c(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15),c(median(R1),median(R2),median(R3),median(R4),median(R5),median(R6),median(R7),median(R8),median(R9),median(R10),median(R11),median(R12),median(R13),median(R14),median(R15)),col=" ",type=" ", pch= , ylab="Number of variants",xlab="Number of Samples")
+ 
+> lines( y , pch=18, col="blue", type="b", lty=2)
+
+#This above lines of code plots the median value of each bootstrap result 
+and a rarefaction plot is generated
