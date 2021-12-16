@@ -1,2 +1,2 @@
-# estimating-richness-by-rarefaction
+# estimating-richness
 Bootstrap
